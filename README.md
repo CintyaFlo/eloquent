@@ -1,2 +1,2 @@
 # eloquent
-Projects from Eloquent JavaScript
+Projects from the Book "Eloquent JavaScript"

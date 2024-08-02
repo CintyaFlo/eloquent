@@ -5,7 +5,6 @@ for (let fizzbuzz = 0; fizzbuzz <= 30; fizzbuzz++) {
     console.log("Fizz");
   } else if (fizzbuzz % 5 == 0) {
     console.log("Buzz");
-    git;
   } else {
     console.log(fizzbuzz);
   }

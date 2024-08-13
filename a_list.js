@@ -38,5 +38,60 @@ function arrayToList2(arr) {
 
   return list; // Return the fully constructed list
 }
-
 console.log(arrayToList2([1, 2, 3]));
+
+//RECURSIVE METHOD
+
+function arrayToListrec(arr) {
+  // Check if the array has no elements
+  if (arr.length === 0) {
+    return null; // Return null to indicate the end of the list
+  } else {
+    // Recursive case: Create a list node
+    // Create an object to represent the current node in the list
+    let list = {
+      value: arr[0], // Set the value of the current node to the first element of the array
+      rest: arrayToListrec(arr.slice(1)), // Recursively create the rest of the list with the remaining elements of the array
+    };
+    return list; // Return the current node object, which contains the value and the rest of the list
+  }
+}
+
+// Test the function with an example array
+console.log(arrayToListrec([1, 2, 3]));
+
+let listObj = {
+  value: 4,
+  rest: {
+    value: 1,
+    rest: {
+      value: 0,
+      rest: null,
+    },
+  },
+};
+
+function listToArray(list) {
+  let arr = [];
+  while (list !== null) {
+    arr.push(list.value);
+    list = list.rest;
+  }
+  return arr;
+}
+console.log(listToArray(listObj));
+
+function prepend(element, list) {
+  let newList = {
+    value: element,
+    rest: list,
+  };
+  return newList;
+}
+console.log(prepend(3, listObj));
+
+function nth(list, number) {
+  return listToArray(list)[number];
+}
+
+console.log(nth(listObj, 2));

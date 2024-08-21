@@ -43,8 +43,6 @@ function deepEqual(x, y) {
 	}
 }
 
-
-
 let obj = {here: {is: "an"}, object: 2};
 console.log(deepEqual(obj, obj));
 // → true
